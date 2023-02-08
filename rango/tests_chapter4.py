@@ -251,6 +251,7 @@ class Chapter4ExerciseTests(TestCase):
         Checks whether the rendered about view has the picture of Rango.
         """
         required_str = f"<img src=\"{settings.STATIC_URL}images/rango.jpg\" alt=\"Picture of Rango\" />"
+        print(f"<img src=\"{settings.STATIC_URL}images/rango.jpg\" alt=\"Picture of Rango\" />")
         self.assertTrue(required_str in self.about_response.content.decode(), f"{FAILURE_HEADER}The HTML markup to include the image of Rango in the about template was not found. It needs to match exactly what we are looking for. Check the book.{FAILURE_FOOTER}")
         
     def test_about_contains_cat(self):
